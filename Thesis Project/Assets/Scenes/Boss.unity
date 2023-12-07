@@ -217,7 +217,7 @@ Transform:
   m_GameObject: {fileID: 169543265}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 0, z: 0}
+  m_LocalPosition: {x: 2, y: 0.85, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -380,7 +380,7 @@ Transform:
   m_GameObject: {fileID: 232240400}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: 0, z: 0}
+  m_LocalPosition: {x: -2, y: 0.85, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -694,11 +694,19 @@ MonoBehaviour:
   _serializedBlackboard: '{"_variables":{"Boss":{"_value":1,"_name":"Boss","_id":"c58ab4e5-00d3-4fa4-8efb-d863a69e8184","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
     UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"Self":{"_value":2,"_name":"Self","_id":"368010d2-7458-4291-b99e-69942d79e2f9","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
     UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"timeScale":{"_propertyPath":"Chronos.Timeline.timeScale","_name":"timeScale","_id":"a013b15f-2304-48e3-8117-fc231e7eaace","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
-    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}}}'
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"Boss
+    Raise Right Hand":{"_name":"Boss Raise Right Hand","_id":"ddea90a3-0299-4c1c-a41f-5acdfa4ae891","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"Left
+    Target":{"_value":3,"_name":"Left Target","_id":"51a68991-8677-4bf0-8562-8f8256bc02b6","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Transform,
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"Right
+    Target":{"_value":4,"_name":"Right Target","_id":"a930e2ac-2272-491d-bffc-e894d793a508","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Transform,
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}}}'
   _objectReferences:
   - {fileID: 0}
   - {fileID: 1602494447}
   - {fileID: 663044071}
+  - {fileID: 232240401}
+  - {fileID: 169543266}
   _serializedVariables:
   - _json: '{"_value":1,"_name":"Boss","_id":"c58ab4e5-00d3-4fa4-8efb-d863a69e8184","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
       UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
@@ -713,6 +721,19 @@ MonoBehaviour:
   - _json: '{"_propertyPath":"Chronos.Timeline.timeScale","_name":"timeScale","_id":"a013b15f-2304-48e3-8117-fc231e7eaace","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
     _references: []
+  - _json: '{"_name":"Boss Raise Right Hand","_id":"ddea90a3-0299-4c1c-a41f-5acdfa4ae891","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
+      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
+    _references: []
+  - _json: '{"_value":1,"_name":"Left Target","_id":"51a68991-8677-4bf0-8562-8f8256bc02b6","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Transform,
+      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
+    _references:
+    - {fileID: 0}
+    - {fileID: 232240401}
+  - _json: '{"_value":1,"_name":"Right Target","_id":"a930e2ac-2272-491d-bffc-e894d793a508","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Transform,
+      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
+    _references:
+    - {fileID: 0}
+    - {fileID: 169543266}
 --- !u!114 &663044074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -782,7 +803,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -8957043835283814548, guid: 35910ea4541b1554382d6b9d2a4ff9ad, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1102,7 +1123,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: -5847411931135843233, guid: 35910ea4541b1554382d6b9d2a4ff9ad, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1688,7 +1709,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 8268335644115788620, guid: 35910ea4541b1554382d6b9d2a4ff9ad, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

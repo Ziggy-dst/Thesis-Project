@@ -20,7 +20,7 @@ MonoBehaviour:
     hand","_targetVariableID":"92c03796-d464-462a-8699-7ebac719f6d1"},"$type":"NodeCanvas.Tasks.Actions.MecanimSetBool"},{"boolVariable":{"_name":"right
     hand raised","_targetVariableID":"5c915c31-632c-4faa-8a1c-e500955616a0"},"setTo":0,"$type":"NodeCanvas.Tasks.Actions.SetBoolean"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":292.0248,"y":506.9716},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"8"},{"_action":{"eventName":{"_value":"BossAimed"},"eventValue":{"_name":"right
     hand raised","_targetVariableID":"5c915c31-632c-4faa-8a1c-e500955616a0"},"delay":{},"sendGlobal":true,"$type":"NodeCanvas.Tasks.Actions.SendEvent`1[[System.Boolean,
-    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"_position":{"x":246.5291,"y":143.0088},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"9"},{"_condition":{"timeout":{"_value":1.25},"$type":"NodeCanvas.Tasks.Conditions.Timeout"},"_position":{"x":534.9227,"y":154.624},"$type":"NodeCanvas.BehaviourTrees.WaitUntil","$id":"10"},{"_position":{"x":700.5229,"y":145.6887},"$type":"NodeCanvas.BehaviourTrees.Parallel","$id":"11"},{"_condition":{"timeout":{"_value":3.0},"$type":"NodeCanvas.Tasks.Conditions.Timeout"},"_position":{"x":630.9612,"y":280.57},"$type":"NodeCanvas.BehaviourTrees.WaitUntil","$id":"12"},{"_condition":{"valueA":{"_name":"right
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"_position":{"x":249.602,"y":165.7176},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"9"},{"_condition":{"timeout":{"_value":1.25},"$type":"NodeCanvas.Tasks.Conditions.Timeout"},"_position":{"x":534.9227,"y":154.624},"$type":"NodeCanvas.BehaviourTrees.WaitUntil","$id":"10"},{"_position":{"x":700.5229,"y":145.6887},"$type":"NodeCanvas.BehaviourTrees.Parallel","$id":"11"},{"_condition":{"timeout":{"_value":3.0},"$type":"NodeCanvas.Tasks.Conditions.Timeout"},"_position":{"x":630.9612,"y":280.57},"$type":"NodeCanvas.BehaviourTrees.WaitUntil","$id":"12"},{"_condition":{"valueA":{"_name":"right
     hand raised","_targetVariableID":"5c915c31-632c-4faa-8a1c-e500955616a0"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},"_position":{"x":790.8968,"y":274.4563},"$type":"NodeCanvas.BehaviourTrees.BinarySelector","$id":"13"},{"_action":{"actions":[{"parameter":{"_value":"isHitting"},"parameterHashID":{},"setTo":{"_value":true},"overrideAgent":{"_type":"UnityEngine.Animator","_name":"right
     hand","_targetVariableID":"7a87926d-5e8b-4fc4-8570-b8818e8f2de2"},"$type":"NodeCanvas.Tasks.Actions.MecanimSetBool"},{"parameter":{"_value":"isAiming"},"parameterHashID":{},"setTo":{},"overrideAgent":{"_type":"UnityEngine.Animator","_name":"right
     hand","_targetVariableID":"7a87926d-5e8b-4fc4-8570-b8818e8f2de2"},"$type":"NodeCanvas.Tasks.Actions.MecanimSetBool"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":652.5294,"y":485.5058},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"14"},{"_action":{"actions":[{"parameter":{"_value":"isHitting"},"parameterHashID":{},"setTo":{"_value":true},"overrideAgent":{"_type":"UnityEngine.Animator","_name":"left
@@ -35,7 +35,7 @@ MonoBehaviour:
     _version: 3.29
     _category: 
     _comments: 
-    _translation: {x: 86, y: -124}
-    _zoomFactor: 1
+    _translation: {x: 309, y: 69}
+    _zoomFactor: 0.3064934
   _haltSerialization: 0
   _externalSerializationFile: {fileID: 0}
