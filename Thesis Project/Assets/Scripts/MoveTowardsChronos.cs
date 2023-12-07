@@ -2,6 +2,7 @@ using NodeCanvas.Framework;
 using ParadoxNotion.Design;
 using UnityEngine;
 using Chronos;
+using Unity.VisualScripting;
 
 namespace NodeCanvas.Tasks.Actions
 {
@@ -16,10 +17,16 @@ namespace NodeCanvas.Tasks.Actions
         public BBParameter<float> speed = 2;
         public BBParameter<float> stopDistance = 0.1f;
         public bool waitActionFinish;
-        public Timeline timeline;
+        private Timeline timeline;
 
+        protected override string OnInit()
+        {
+            timeline = agent.GetComponent<Timeline>();
+            return base.OnInit();
+        }
 
         protected override void OnUpdate() {
+
             if ( ( agent.position - target.value.transform.position ).magnitude <= stopDistance.value ) {
                 EndAction();
                 return;
