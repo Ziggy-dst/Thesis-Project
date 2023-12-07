@@ -263,7 +263,9 @@ MonoBehaviour:
     hand":{"_value":2,"_name":"left hand","_id":"92c03796-d464-462a-8699-7ebac719f6d1","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
     UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"right
     hand":{"_value":3,"_name":"right hand","_id":"7a87926d-5e8b-4fc4-8570-b8818e8f2de2","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
-    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}}}'
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"right
+    hand raised":{"_name":"right hand raised","_id":"5c915c31-632c-4faa-8a1c-e500955616a0","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}}}'
   _objectReferences:
   - {fileID: 0}
   - {fileID: 663044071}
@@ -285,6 +287,9 @@ MonoBehaviour:
     _references:
     - {fileID: 0}
     - {fileID: 692810992}
+  - _json: '{"_name":"right hand raised","_id":"5c915c31-632c-4faa-8a1c-e500955616a0","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
+      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
+    _references: []
 --- !u!114 &206739080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -564,9 +569,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _parentBlackboard: {fileID: 0}
-  _serializedBlackboard: '{"_variables":{}}'
-  _objectReferences: []
-  _serializedVariables: []
+  _serializedBlackboard: '{"_variables":{"Boss":{"_value":1,"_name":"Boss","_id":"c58ab4e5-00d3-4fa4-8efb-d863a69e8184","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}}}'
+  _objectReferences:
+  - {fileID: 0}
+  - {fileID: 1602494447}
+  _serializedVariables:
+  - _json: '{"_value":1,"_name":"Boss","_id":"c58ab4e5-00d3-4fa4-8efb-d863a69e8184","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
+      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
+    _references:
+    - {fileID: 0}
+    - {fileID: 1602494447}
 --- !u!114 &663044074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -580,24 +593,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _serializedExposedParameters: []
-  _boundGraphSerialization: '{"type":"NodeCanvas.BehaviourTrees.BehaviourTree","nodes":[{"_action":{"targetList":{"_value":[1,2]},"patrolMode":{},"speed":{"_value":4.0},"keepDistance":{"_value":0.1},"$type":"NodeCanvas.Tasks.Actions.Patrol"},"_position":{"x":544.5109,"y":139.6965},"$type":"NodeCanvas.BehaviourTrees.ActionNode"}],"connections":[],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
-  _boundGraphObjectReferences:
-  - {fileID: 0}
-  - {fileID: 232240400}
-  - {fileID: 169543265}
+  _boundGraphSerialization: 
+  _boundGraphObjectReferences: []
   _boundGraphSource:
-    _version: 3.29
+    _version: 0
     _category: 
     _comments: 
-    _translation: {x: 127.36355, y: 3.6868463}
-    _zoomFactor: 0.7296257
+    _translation: {x: 0, y: 0}
+    _zoomFactor: 1
   _firstActivation: 0
   _enableAction: 0
   _disableAction: 0
   _lockBoundGraphPrefabOverrides: 1
   _preInitializeSubGraphs: 0
   _updateMode: 0
-  _graph: {fileID: 0}
+  _graph: {fileID: 11400000, guid: a27c71079acce6d4082fc9a3733a085d, type: 2}
   _blackboard: {fileID: 663044073}
 --- !u!212 &663044075
 SpriteRenderer:
@@ -1341,7 +1351,7 @@ Transform:
   m_GameObject: {fileID: 1602494447}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.15, z: 0}
+  m_LocalPosition: {x: 0, y: -1.14, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
