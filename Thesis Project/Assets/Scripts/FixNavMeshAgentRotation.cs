@@ -12,9 +12,9 @@ public class FixNavMeshAgentRotation : MonoBehaviour
 		agent.updateUpAxis = false;
 	}
 
-	private void Update()
-	{
-		Vector3 pos3D = transform.position;
-		transform.position = new Vector3(pos3D.x, pos3D.y, 0);
-	}
+	// private void Update()
+	// {
+	// 	Vector3 pos3D = transform.position;
+	// 	transform.position = new Vector3(pos3D.x, pos3D.y, 0);
+	// }
 }
