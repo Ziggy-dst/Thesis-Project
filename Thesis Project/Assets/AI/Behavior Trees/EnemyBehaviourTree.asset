@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a686a47eee2fa44cb0a34b5d86e4d5e, type: 3}
   m_Name: EnemyBehaviourTree
   m_EditorClassIdentifier: 
-  _serializedGraph: '{"type":"NodeCanvas.BehaviourTrees.BehaviourTree","nodes":[{"_action":{"speed":{"_value":4.0},"keepDistance":{"_value":0.1},"minWanderDistance":{"_value":5.0},"maxWanderDistance":{"_value":20.0},"$type":"NodeCanvas.Tasks.Actions.Wander"},"_position":{"x":-1157.43,"y":-623.3925},"$type":"NodeCanvas.BehaviourTrees.ActionNode"},{"_action":{"targetList":{"_value":[]},"patrolMode":{},"speed":{"_value":4.0},"keepDistance":{"_value":0.1},"$type":"NodeCanvas.Tasks.Actions.Patrol"},"_position":{"x":-1430.215,"y":-706.6565},"$type":"NodeCanvas.BehaviourTrees.ActionNode"},{"_action":{"target":{},"speed":{"_value":4.0},"keepDistance":{"_value":0.1},"$type":"NodeCanvas.Tasks.Actions.MoveToGameObject"},"_position":{"x":-1269.824,"y":-533.4498},"$type":"NodeCanvas.BehaviourTrees.ActionNode"}],"connections":[],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
+  _serializedGraph: '{"type":"NodeCanvas.BehaviourTrees.BehaviourTree","nodes":[{"_action":{"targetList":{"_name":"Patrol
+    List","_targetVariableID":"b3206040-7b83-46ef-9c0f-e52b3f5f37d8"},"patrolMode":{},"speed":{"_value":4.0},"keepDistance":{"_value":0.1},"repeat":true,"$type":"NodeCanvas.Tasks.Actions.PatrolAndRotateTowards2D"},"_position":{"x":-1463.249,"y":-397.7518},"$type":"NodeCanvas.BehaviourTrees.ActionNode"},{"_action":{"target":{"_name":"myObject","_targetVariableID":"24a1ad44-47b7-4256-965b-e2d7a075889b"},"speed":{"_value":20.0},"angleDifference":{"_value":5.0},"$type":"NodeCanvas.Tasks.Actions.RotateTowards2D"},"_position":{"x":-1523.225,"y":-695.3436},"$type":"NodeCanvas.BehaviourTrees.ActionNode"},{"_position":{"x":-1344.68,"y":-198.7272},"$type":"NodeCanvas.BehaviourTrees.ActionNode"},{"_condition":{"checkTarget":{},"viewAngle":{"_value":70.0},"$type":"NodeCanvas.Tasks.Conditions.IsInFront2D"},"_position":{"x":-1622.526,"y":-286.3898},"$type":"NodeCanvas.BehaviourTrees.ConditionNode"}],"connections":[],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
   _objectReferences: []
   _graphSource:
     _version: 3.29
     _category: 
     _comments: 
-    _translation: {x: 1640.8237, y: 838.44977}
-    _zoomFactor: 1
+    _translation: {x: 1326.0176, y: 429.75052}
+    _zoomFactor: 0.6730356
   _haltSerialization: 0
   _externalSerializationFile: {fileID: 0}
