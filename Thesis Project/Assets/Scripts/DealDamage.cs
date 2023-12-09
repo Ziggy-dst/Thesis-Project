@@ -1,11 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class DealDamage : MonoBehaviour
 {
-    public LayerMask targetLayer;
-    
+    public string targetTag;
+    public float damage;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,5 +18,13 @@ public class DealDamage : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.CompareTag(targetTag))
+        {
+            col.GetComponent<Health>().TakeDamage(damage);
+        }
     }
 }
