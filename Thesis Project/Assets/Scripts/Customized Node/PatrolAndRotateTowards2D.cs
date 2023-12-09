@@ -92,7 +92,6 @@ namespace NodeCanvas.Tasks.Actions
 
         void DoLook()
         {
-            Debug.Log(targetList.value[index].transform.position);
             Vector2 lookDirection = targetList.value[index].transform.position - agent.transform.position;
             float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90; // 计算角度
 
