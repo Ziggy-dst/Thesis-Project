@@ -22,9 +22,9 @@ public class DealDamage : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.CompareTag(targetTag))
+        if (col.gameObject.CompareTag(targetTag))
         {
-            col.GetComponent<Health>().TakeDamage(damage);
+            col.gameObject.GetComponent<Health>().TakeDamage(damage);
         }
     }
 }
