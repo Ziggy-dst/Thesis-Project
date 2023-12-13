@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Chronos;
 using UnityEngine;
 
 public class DealDamage : MonoBehaviour
@@ -30,7 +31,7 @@ public class DealDamage : MonoBehaviour
 
             if (disableAfterDealDamage)
             {
-                gameObject.SetActive(false);
+                GetComponentInParent<BulletParentOccurences>().SetBulletActiveOccurence();
             }
         }
     }
