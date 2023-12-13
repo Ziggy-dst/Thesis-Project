@@ -1,12 +1,15 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Chronos;
 using UnityEngine;
 
 public class DealDamage : MonoBehaviour
 {
     public string targetTag;
     public float damage;
+
+    public bool disableAfterDealDamage = false;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +28,11 @@ public class DealDamage : MonoBehaviour
         if (col.gameObject.CompareTag(targetTag))
         {
             col.gameObject.GetComponent<Health>().TakeDamage(damage);
+
+            if (disableAfterDealDamage)
+            {
+                GetComponentInParent<BulletParentOccurences>().SetBulletActiveOccurence();
+            }
         }
     }
 }
