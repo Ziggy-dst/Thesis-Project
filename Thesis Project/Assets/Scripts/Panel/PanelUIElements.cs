@@ -10,10 +10,23 @@ public class PanelUIElements : MonoBehaviour
 
     private bool isDragging = false;
 
+    public KeyCode keyCode;
+
 
     protected virtual void Start()
     {
         originalScale = transform.localScale;
+    }
+
+    protected virtual void Update()
+    {
+        if (Input.GetKeyDown(keyCode))
+        {
+            OnMouseOver();
+            OnMouseDown();
+        }
+        if(Input.GetKey(keyCode)) MouseDragAction();
+        if(Input.GetKeyUp(keyCode)) OnMouseUp();
     }
 
     protected virtual void OnMouseOver()
