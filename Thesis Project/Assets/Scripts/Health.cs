@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Chronos;
@@ -19,6 +20,7 @@ public class Health : MonoBehaviour
     [Header("Battle")]
     public bool immuneToDamage;
     public float getHitCD;
+    private float getHitCDTimer;
 
     [Header("Respawn")]
     public bool respawnOnDeath;
@@ -29,15 +31,19 @@ public class Health : MonoBehaviour
     private bool isDead;
 
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        // spawnPoint = GameObject.FindWithTag("Spawn Point");
         healthPoint = initialHealthPoint;
         immuneToDamage = false;
+        getHitCDTimer = 0;
+        // spawnPoint = GameObject.FindWithTag("Spawn Point");
     }
 
-    // Update is called once per frame
+    void Start()
+    {
+        
+    }
+    
     void Update()
     {
         if (healthPoint <= 0)
@@ -46,6 +52,18 @@ public class Health : MonoBehaviour
             {
                 Die();
             }
+        }
+
+        if (getHitCDTimer <= 0)
+        {
+            getHitCDTimer = 0;
+            immuneToDamage = false;
+        }
+        else
+        {
+            if (timeline.timeScale >= 0) getHitCDTimer -= timeline.deltaTime;
+            else getHitCDTimer = 0f;
+            immuneToDamage = true;
         }
     }
 
@@ -82,15 +100,10 @@ public class Health : MonoBehaviour
         {
             healthPoint -= dmg;
             immuneToDamage = true;
-            spriteRenderer.DOColor(Color.red, getHitCD).SetEase(Ease.Flash, 16, 1);
+            spriteRenderer.DOColor(Color.red, getHitCD).SetEase(Ease.Flash, 16, 1).RegisterChronosTimeline(timeline);
+            getHitCDTimer = getHitCD;
             
-            StartCoroutine(ResetHitCoolDown());
+            print(gameObject.name + "health: " + healthPoint);
         }
-    }
-
-    IEnumerator ResetHitCoolDown()
-    {
-        yield return timeline.WaitForSeconds(getHitCD);
-        immuneToDamage = false;
     }
 }
