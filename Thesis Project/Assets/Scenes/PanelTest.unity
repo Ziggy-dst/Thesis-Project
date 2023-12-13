@@ -2591,8 +2591,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverScaleIncrease: 0.025
-  requiredConsecutiveFrames: 2
-  maxAnglePerFrame: 10
+  requiredConsecutiveFrames: 3
+  maxAnglePerFrame: 5
   startAngle: 0
   minRotateAngle: -30
   maxRotateAngle: 30
