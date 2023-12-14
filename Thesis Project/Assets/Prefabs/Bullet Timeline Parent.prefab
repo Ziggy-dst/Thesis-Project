@@ -239,6 +239,7 @@ MonoBehaviour:
   targetTag: Enemy
   damage: 1
   disableAfterDealDamage: 1
+  selfDisable: 1
 --- !u!331 &8631734801081817757
 SpriteMask:
   m_ObjectHideFlags: 0

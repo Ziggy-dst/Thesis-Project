@@ -104,7 +104,7 @@ public class RangedAttack : ActionTask
 
         // shoot the bullet
         bulletInstance.transform.GetChild(0).GetComponent<BoxCollider2D>().enabled = true;
-        bulletInstance.transform.DOMove(realTarget, distance / bulletSpeed).RegisterChronosTimeline(timeline);
+        bulletInstance.transform.DOMove(realTarget, distance / bulletSpeed).SetEase(Ease.Linear).RegisterChronosTimeline(timeline);
         // bulletInstance.transform.GetChild(0).GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
         EndAction(true);
     }

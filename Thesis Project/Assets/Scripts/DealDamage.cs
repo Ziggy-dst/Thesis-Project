@@ -10,11 +10,19 @@ public class DealDamage : MonoBehaviour
     public float damage;
 
     public bool disableAfterDealDamage = false;
+    public bool selfDisable = false;
+
+    private Timeline timeline;
 
     // Start is called before the first frame update
     void Start()
     {
         
+    }
+
+    private void OnEnable()
+    {
+        if (selfDisable) StartCoroutine(SelfDisable());
     }
 
     // Update is called once per frame
@@ -34,5 +42,12 @@ public class DealDamage : MonoBehaviour
                 GetComponentInParent<BulletParentOccurences>().SetBulletActiveOccurence();
             }
         }
+    }
+
+    IEnumerator SelfDisable()
+    {
+        timeline = GetComponentInParent<Timeline>();
+        yield return timeline.WaitForSeconds(8);
+        GetComponentInParent<BulletParentOccurences>().SetBulletActiveOccurence();
     }
 }
