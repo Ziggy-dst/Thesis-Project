@@ -9,7 +9,7 @@ public class PanelSwitch : PanelUIElements
 
     [Range(0, 50)] public float mouseSwitchThreshold;
 
-    private int currentPosition = 0;
+    public int currentPosition = 0;
     private bool switchLock;
 
     protected override void OnMouseDown()

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Chronos;
 using UnityEngine;
 
 public class PanelCD : PanelUIElements
@@ -21,18 +22,21 @@ public class PanelCD : PanelUIElements
     private float currentIdleVelocity;
 
     private bool canSelfRotate = true;
+    private AreaClock2D areaClock;
 
     protected override void Start()
     {
         base.Start();
         transform.rotation = Quaternion.Euler(0, 0, startAngle);
         currentIdleVelocity = idleAngularVelocity;
+
+        areaClock = FindObjectOfType<AreaClock2D>();
     }
 
     protected override void OnMouseDown()
     {
         base.OnMouseDown();
-        currentIdleVelocity = idleAngularVelocity / 2;
+        currentIdleVelocity = idleAngularVelocity / 3;
     }
 
     protected override void Update()
@@ -43,7 +47,8 @@ public class PanelCD : PanelUIElements
         {
             transform.Rotate(0, 0, -currentIdleVelocity * Time.deltaTime);
             angularVelocity = -currentIdleVelocity;
-            print(angularVelocity);
+            areaClock.localTimeScale = currentIdleVelocity / idleAngularVelocity;
+            // print(angularVelocity);
         }
     }
 
@@ -54,7 +59,7 @@ public class PanelCD : PanelUIElements
         if (mouseDelta == Vector2.zero)
         {
             canSelfRotate = true;
-            currentIdleVelocity = idleAngularVelocity / 2;
+            currentIdleVelocity = idleAngularVelocity / 3;
             print("angularVelocity " + currentIdleVelocity);
         }
         
@@ -62,6 +67,8 @@ public class PanelCD : PanelUIElements
         {
             canSelfRotate = false;
             currentIdleVelocity = 0;
+
+            areaClock.localTimeScale = isClockwise ? 3 : -3;
             
             float currentAngle = Mathf.Atan2(mouseDelta.y, mouseDelta.x) * Mathf.Rad2Deg;
             float angleDelta = Mathf.DeltaAngle(lastAngle, currentAngle);
