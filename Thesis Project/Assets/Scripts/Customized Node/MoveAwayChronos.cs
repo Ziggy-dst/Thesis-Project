@@ -15,6 +15,7 @@ namespace NodeCanvas.Tasks.Actions
         public BBParameter<GameObject> target;
         public BBParameter<float> speed = 2;
         public BBParameter<float> stopDistance = 3;
+        public BBParameter<float> stopDistanceOffset = 0;
         public bool waitActionFinish;
         private Timeline timeline;
 
@@ -25,7 +26,7 @@ namespace NodeCanvas.Tasks.Actions
         }
 
         protected override void OnUpdate() {
-            if ( ( agent.position - target.value.transform.position ).magnitude >= stopDistance.value ) {
+            if ( ( agent.position - target.value.transform.position ).magnitude >= stopDistance.value + stopDistanceOffset.value ) {
                 EndAction();
                 return;
             }
