@@ -42,11 +42,10 @@ public class PanelCD : PanelUIElements
         if (canSelfRotate)
         {
             transform.Rotate(0, 0, -currentIdleVelocity * Time.deltaTime);
+            angularVelocity = -currentIdleVelocity;
+            print(angularVelocity);
         }
-        
-        angularVelocity = currentIdleVelocity;
     }
-    
 
     protected override void MouseDragAction()
     {
@@ -56,6 +55,7 @@ public class PanelCD : PanelUIElements
         {
             canSelfRotate = true;
             currentIdleVelocity = idleAngularVelocity / 2;
+            print("angularVelocity " + currentIdleVelocity);
         }
         
         if (mouseDelta != Vector2.zero)
@@ -65,6 +65,12 @@ public class PanelCD : PanelUIElements
             
             float currentAngle = Mathf.Atan2(mouseDelta.y, mouseDelta.x) * Mathf.Rad2Deg;
             float angleDelta = Mathf.DeltaAngle(lastAngle, currentAngle);
+
+
+            // angularVelocity = angleDelta / Time.deltaTime;
+            // print("angularVelocity " + angularVelocity);
+
+            // Quaternion lastRotation = transform.rotation;
 
             // 检查旋转方向是否一致
             bool isCurrentClockwise = angleDelta < 0;
@@ -83,11 +89,14 @@ public class PanelCD : PanelUIElements
             // 更新旋转方向
             isClockwise = isCurrentClockwise;
 
+
             // 检查连续帧数是否达到阈值
             if (consecutiveFrames >= requiredConsecutiveFrames)
             {
                 accumulatedRotation = Mathf.Clamp(accumulatedRotation, -maxAnglePerFrame, maxAnglePerFrame);
 
+                // angularVelocity = accumulatedRotation / (Time.deltaTime * consecutiveFrames);
+                // print("angularVelocity " + angularVelocity);
                 // float currentRotationZ = transform.rotation.z + accumulatedRotation;
 
                 // transform.rotation = Quaternion.Euler(0, 0,currentRotationZ);
@@ -114,5 +123,6 @@ public class PanelCD : PanelUIElements
         consecutiveFrames = 0;
         accumulatedRotation = 0f;
         currentIdleVelocity = idleAngularVelocity;
+        canSelfRotate = true;
     }
 }

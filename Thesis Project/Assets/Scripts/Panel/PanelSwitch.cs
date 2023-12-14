@@ -33,7 +33,7 @@ public class PanelSwitch : PanelUIElements
         if (currentPosition < 0) currentPosition = 0;
         transform.rotation = Quaternion.Euler(new Vector3(0,0,switchPositionDegree[currentPosition]));
 
-        print(Input.GetAxis("Mouse Y"));
+        // print(Input.GetAxis("Mouse Y"));
     }
 
     protected override void MouseDragAction()
