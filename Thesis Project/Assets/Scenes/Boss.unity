@@ -757,9 +757,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 696fcc9b0345aca48b33e3934463132d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sliderA: {fileID: 2136706889}
-  sliderB: {fileID: 1587110927}
-  hoverScaleIncrease: 0.1
+  sliderA: {fileID: 2136706894}
+  sliderB: {fileID: 1587110932}
 --- !u!1 &261923053
 GameObject:
   m_ObjectHideFlags: 0
@@ -5755,10 +5754,9 @@ GameObject:
   - component: {fileID: 1587110928}
   - component: {fileID: 1587110931}
   - component: {fileID: 1587110930}
-  - component: {fileID: 1587110929}
   - component: {fileID: 1587110932}
-  m_Layer: 0
-  m_Name: Slider
+  m_Layer: 5
+  m_Name: Slider (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5779,33 +5777,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1800967760}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &1587110929
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1587110927}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 2
-  m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 0
 --- !u!58 &1587110930
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5835,7 +5806,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.01, y: 0}
@@ -5907,7 +5878,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverScaleIncrease: 0.1
   keyCode: 101
-  otherSlider: {fileID: 2136706889}
+  isDragging: 0
+  stopDistance: 0.5
+  maxY: 2
+  minY: -1.5
+  percentage: 0
 --- !u!1 &1591600095
 GameObject:
   m_ObjectHideFlags: 0
@@ -7621,9 +7596,8 @@ GameObject:
   - component: {fileID: 2136706890}
   - component: {fileID: 2136706893}
   - component: {fileID: 2136706892}
-  - component: {fileID: 2136706891}
   - component: {fileID: 2136706894}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7645,33 +7619,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1354067831}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &2136706891
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2136706889}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 2
-  m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 0
 --- !u!58 &2136706892
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -7701,7 +7648,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0, y: -0.02}
@@ -7773,7 +7720,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverScaleIncrease: 0.1
   keyCode: 113
-  otherSlider: {fileID: 1587110927}
+  isDragging: 0
+  stopDistance: 0.5
+  maxY: 2
+  minY: -1.5
+  percentage: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
