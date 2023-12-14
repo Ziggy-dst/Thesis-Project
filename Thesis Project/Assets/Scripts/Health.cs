@@ -26,6 +26,11 @@ public class Health : MonoBehaviour
     public bool respawnOnDeath;
     public float respawnCD;
 
+    [Header("Feedback")] 
+    public bool feedback;
+    
+    private AudioSource _audioSource;
+
     private GameObject spawnPoint;
 
     private bool isDead;
@@ -36,6 +41,7 @@ public class Health : MonoBehaviour
         healthPoint = initialHealthPoint;
         immuneToDamage = false;
         getHitCDTimer = 0;
+        if (feedback) _audioSource = GetComponent<AudioSource>();
         // spawnPoint = GameObject.FindWithTag("Spawn Point");
     }
 
@@ -101,6 +107,7 @@ public class Health : MonoBehaviour
             healthPoint -= dmg;
             immuneToDamage = true;
             spriteRenderer.DOColor(Color.red, getHitCD).SetEase(Ease.Flash, 16, 1).RegisterChronosTimeline(timeline);
+            if (feedback) _audioSource.Play();
             getHitCDTimer = getHitCD;
             
             print(gameObject.name + "health: " + healthPoint);
