@@ -1,15 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
+using NodeCanvas.BehaviourTrees;
+using NodeCanvas.Framework;
 using UnityEngine;
 
 public class PanelSlider : PanelUIElements
 {
-    [HideInInspector] public bool isDragging = false;
+    public bool isDragging = false;
     public float stopDistance = 0.1f;
     public float maxY = 3.5f;
     public float minY = -1.5f;
 
     [HideInInspector] public float percentage = 0;
+    
+    //下面我拉一点，到时候可以删掉
+    private BehaviourTreeOwner playerBehaviourTree;
+    public bool isControllingRange = false;
+
+    //下面我拉一点，到时候可以删掉
+    protected override void Start()
+    {
+        base.Start();
+        playerBehaviourTree = GameObject.FindGameObjectWithTag("Player").GetComponent<BehaviourTreeOwner>();
+    }
+    
+    //下面我拉一点，到时候可以删掉
+    protected override void Update()
+    {
+        base.Update();
+        if (isControllingRange) playerBehaviourTree.blackboard.GetVariable<float>("Attack Range").value = 1 + percentage * 3f;
+    }
 
     protected override void MouseDragAction()
     {
@@ -19,6 +39,7 @@ public class PanelSlider : PanelUIElements
         newPosition.y = Mathf.Clamp(Mathf.Round(newPosition.y * 100f) / 100f, minY, maxY);
 
         SetSliderPosition(newPosition.y);
+
     }
 
     protected override void OnMouseUp()
@@ -33,4 +54,5 @@ public class PanelSlider : PanelUIElements
         percentage = (newY - minY) / (maxY - minY);
         // print("percentage " + gameObject.name + ": " + percentage);
     }
+    
 }

@@ -6398,6 +6398,7 @@ MonoBehaviour:
   maxY: 2
   minY: -1.5
   percentage: 0
+  isControllingRange: 1
 --- !u!1 &1591600095
 GameObject:
   m_ObjectHideFlags: 0
@@ -7545,7 +7546,7 @@ MonoBehaviour:
   - 0
   - 30
   mouseSwitchThreshold: 20
-  currentPosition: 0
+  currentPosition: 1
 --- !u!212 &1960352098
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8354,6 +8355,7 @@ MonoBehaviour:
   maxY: 2
   minY: -1.5
   percentage: 0
+  isControllingRange: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

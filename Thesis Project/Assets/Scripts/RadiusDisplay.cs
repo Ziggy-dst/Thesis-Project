@@ -7,7 +7,7 @@ using UnityEngine;
  
 //该物体需要 LineRenderer组件，也可以手动添加LineRenderer组件，把这个注释掉
 [RequireComponent(typeof(LineRenderer))]
-public class CirclesDrawer : MonoBehaviour
+public class RadiusDisplay : MonoBehaviour
 {
     public int segments;//所用的线条（线条越多，画出来的圆越圆）
     // X轴与Y轴半径相等时绘制的是正圆（正多边形），否则是椭圆；同时也会影响圆的大小

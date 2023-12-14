@@ -9,6 +9,15 @@ public class SliderManager : MonoBehaviour
     // private Vector3 sliderAOriginalScale;
     // private Vector3 sliderBOriginalScale;
     // private GameObject activeSlider = null; // 当前活动的滑块
+    
+    //下面我拉一点
+    private RadiusDisplay radius;
+    
+    //拉
+    private void Start()
+    {
+        radius = FindObjectOfType<RadiusDisplay>();
+    }
 
 
     private void Update()
@@ -16,10 +25,16 @@ public class SliderManager : MonoBehaviour
         if (!Cursor.visible)
         {
             if (sliderA.isDragging)
-                sliderB.transform.localPosition = new Vector3(sliderB.transform.localPosition.x,  (1 - sliderA.percentage) * (sliderB.maxY - sliderB.minY) + sliderB.minY, 0);
+                // sliderB.transform.localPosition = new Vector3(sliderB.transform.localPosition.x,  (1 - sliderA.percentage) * (sliderB.maxY - sliderB.minY) + sliderB.minY, 0);
+                sliderB.SetSliderPosition((1 - sliderA.percentage) * (sliderB.maxY - sliderB.minY) + sliderB.minY);
             if (sliderB.isDragging)
-                sliderA.transform.localPosition = new Vector3(sliderA.transform.localPosition.x,  (1 - sliderB.percentage) * (sliderA.maxY - sliderA.minY) + sliderA.minY, 0);
+                // sliderA.transform.localPosition = new Vector3(sliderA.transform.localPosition.x,  (1 - sliderB.percentage) * (sliderA.maxY - sliderA.minY) + sliderA.minY, 0);
+                sliderA.SetSliderPosition((1 - sliderB.percentage) * (sliderA.maxY - sliderA.minY) + sliderA.minY);
         }
+        
+        //拉
+        if (sliderA.isDragging || sliderB.isDragging) radius.gameObject.SetActive(true);
+        if (!sliderA.isDragging && !sliderB.isDragging) radius.gameObject.SetActive(false);
     }
     // private void Start()
     // {
