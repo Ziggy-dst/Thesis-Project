@@ -20,13 +20,13 @@ public class PanelCD : PanelUIElements
     public float idleAngularVelocity;
     private float currentIdleVelocity;
 
-    private Rigidbody2D rb2D;
+    private bool canSelfRotate = true;
+
     protected override void Start()
     {
         base.Start();
         transform.rotation = Quaternion.Euler(0, 0, startAngle);
         currentIdleVelocity = idleAngularVelocity;
-        rb2D = GetComponent<Rigidbody2D>();
     }
 
     protected override void OnMouseDown()
@@ -39,9 +39,12 @@ public class PanelCD : PanelUIElements
     {
         base.Update();
 
-        rb2D.MoveRotation(rb2D.rotation - currentIdleVelocity * Time.fixedDeltaTime);
+        if (canSelfRotate)
+        {
+            transform.Rotate(0, 0, -currentIdleVelocity * Time.deltaTime);
+        }
         
-        angularVelocity = rb2D.angularVelocity;
+        angularVelocity = currentIdleVelocity;
     }
     
 
@@ -49,11 +52,16 @@ public class PanelCD : PanelUIElements
     {
         Vector2 mouseDelta = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
 
-        if (mouseDelta == Vector2.zero) currentIdleVelocity = idleAngularVelocity / 2;
+        if (mouseDelta == Vector2.zero)
+        {
+            canSelfRotate = true;
+            currentIdleVelocity = idleAngularVelocity / 2;
+        }
         
         if (mouseDelta != Vector2.zero)
         {
-            currentIdleVelocity = 0;
+            canSelfRotate = false;
+            // currentIdleVelocity = 0;
             
             float currentAngle = Mathf.Atan2(mouseDelta.y, mouseDelta.x) * Mathf.Rad2Deg;
             float angleDelta = Mathf.DeltaAngle(lastAngle, currentAngle);
@@ -87,8 +95,7 @@ public class PanelCD : PanelUIElements
                 if (accumulatedRotation + transform.rotation.z > minRotateAngle &
                     accumulatedRotation + transform.rotation.z < maxRotateAngle)
                 {
-                    // transform.Rotate(0, 0, accumulatedRotation);
-                    rb2D.MoveRotation(rb2D.rotation + accumulatedRotation);
+                    transform.Rotate(0, 0, accumulatedRotation);
                 }
                 Debug.Log(isClockwise ? "顺时针移动！" : "逆时针移动！");
 
