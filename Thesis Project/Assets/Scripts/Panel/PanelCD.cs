@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Chronos;
 using UnityEngine;
 
 public class PanelCD : PanelUIElements
@@ -21,12 +22,15 @@ public class PanelCD : PanelUIElements
     private float currentIdleVelocity;
 
     private bool canSelfRotate = true;
+    private GlobalClock globalClock;
 
     protected override void Start()
     {
         base.Start();
         transform.rotation = Quaternion.Euler(0, 0, startAngle);
         currentIdleVelocity = idleAngularVelocity;
+
+        globalClock = FindObjectOfType<GlobalClock>();
     }
 
     protected override void OnMouseDown()
@@ -43,7 +47,8 @@ public class PanelCD : PanelUIElements
         {
             transform.Rotate(0, 0, -currentIdleVelocity * Time.deltaTime);
             angularVelocity = -currentIdleVelocity;
-            print(angularVelocity);
+            globalClock.localTimeScale = currentIdleVelocity / idleAngularVelocity;
+            // print(angularVelocity);
         }
     }
 
@@ -62,6 +67,8 @@ public class PanelCD : PanelUIElements
         {
             canSelfRotate = false;
             currentIdleVelocity = 0;
+
+            globalClock.localTimeScale = isClockwise ? 3 : -3;
             
             float currentAngle = Mathf.Atan2(mouseDelta.y, mouseDelta.x) * Mathf.Rad2Deg;
             float angleDelta = Mathf.DeltaAngle(lastAngle, currentAngle);
