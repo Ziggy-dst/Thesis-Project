@@ -8,8 +8,6 @@ public class PanelUIElements : MonoBehaviour
     public float hoverScaleIncrease = 0.1f; // 鼠标悬停时的缩放增加量
     private Vector3 originalScale;
 
-    private bool isDragging = false;
-
     public KeyCode keyCode;
 
 
