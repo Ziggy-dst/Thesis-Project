@@ -16,6 +16,7 @@ namespace NodeCanvas.Tasks.Conditions
         public BBParameter<GameObject> checkTarget;
         public CompareMethod checkType = CompareMethod.LessThan;
         public BBParameter<float> distance = 10;
+        public BBParameter<float> distanceOffset = 0;
 
         [SliderField(0, 0.1f)]
         public float floatingPoint = 0.05f;
@@ -25,12 +26,12 @@ namespace NodeCanvas.Tasks.Conditions
         }
 
         protected override bool OnCheck() {
-            return OperationTools.Compare(Vector3.Distance(agent.position, checkTarget.value.transform.position), distance.value, checkType, floatingPoint);
+            return OperationTools.Compare(Vector3.Distance(agent.position, checkTarget.value.transform.position), distance.value + distanceOffset.value, checkType, floatingPoint);
         }
 
         public override void OnDrawGizmosSelected() {
             if ( agent != null ) {
-                Gizmos.DrawWireSphere(agent.position, distance.value);
+                Gizmos.DrawWireSphere(agent.position, distance.value + distanceOffset.value);
             }
         }
     }

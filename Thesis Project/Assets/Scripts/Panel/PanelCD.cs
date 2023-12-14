@@ -61,7 +61,7 @@ public class PanelCD : PanelUIElements
         if (mouseDelta != Vector2.zero)
         {
             canSelfRotate = false;
-            // currentIdleVelocity = 0;
+            currentIdleVelocity = 0;
             
             float currentAngle = Mathf.Atan2(mouseDelta.y, mouseDelta.x) * Mathf.Rad2Deg;
             float angleDelta = Mathf.DeltaAngle(lastAngle, currentAngle);
