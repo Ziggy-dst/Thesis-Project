@@ -6,7 +6,6 @@ using Unity.VisualScripting;
 
 namespace NodeCanvas.Tasks.Actions
 {
-
     [Category("Movement/Direct")]
     [Description("Moves the agent towards to target per frame without pathfinding in chronos timescale")]
     public class MoveTowardsChronos : ActionTask<Transform>

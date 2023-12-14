@@ -530,7 +530,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 338756272}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Attack Origin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -820,8 +820,7 @@ GameObject:
   - component: {fileID: 663044081}
   - component: {fileID: 663044080}
   - component: {fileID: 663044082}
-  - component: {fileID: 663044083}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Player Test
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -875,6 +874,12 @@ MonoBehaviour:
     UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"Attack
     Animator":{"_value":5,"_name":"Attack Animator","_id":"e6701baa-f132-4cd3-bc45-fface02ab96d","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Animator,
     UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"Bullet":{"_value":6,"_name":"Bullet","_id":"f8bac5ea-4110-484b-a101-79924a1e55ae","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"Ice
+    Sliding":{"_value":{},"_name":"Ice Sliding","_id":"a38ddd36-3b76-49af-9e8f-40fc99afcfde","$type":"NodeCanvas.Framework.Variable`1[[NodeCanvas.Framework.VariableSeperator,
+    ParadoxNotion, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"isOnIce":{"_name":"isOnIce","_id":"bf0930d3-f67f-46b5-aae6-2f13eb756149","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"isSliding":{"_name":"isSliding","_id":"bc3d0d94-05ca-419e-8fed-c0edcec915d6","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"moveDirection":{"_name":"moveDirection","_id":"664a17f4-5de9-4e17-98d4-b576af14593b","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Vector2,
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"slidingTarget":{"_name":"slidingTarget","_id":"d561b870-fa25-4c03-8c4c-9a3a12ba238a","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Vector2,
     UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"Adjustable
     Stats":{"_value":{},"_name":"Adjustable Stats","_id":"63ee3e95-df95-4a76-a73c-121106d10d3a","$type":"NodeCanvas.Framework.Variable`1[[NodeCanvas.Framework.VariableSeperator,
     ParadoxNotion, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"Move
@@ -927,6 +932,21 @@ MonoBehaviour:
     _references:
     - {fileID: 0}
     - {fileID: 5673437296067449094, guid: 725c67d77dcd74c19b1dd30b3a7da68c, type: 3}
+  - _json: '{"_value":{},"_name":"Ice Sliding","_id":"a38ddd36-3b76-49af-9e8f-40fc99afcfde","$type":"NodeCanvas.Framework.Variable`1[[NodeCanvas.Framework.VariableSeperator,
+      ParadoxNotion, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
+    _references: []
+  - _json: '{"_name":"isOnIce","_id":"bf0930d3-f67f-46b5-aae6-2f13eb756149","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
+      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
+    _references: []
+  - _json: '{"_name":"isSliding","_id":"bc3d0d94-05ca-419e-8fed-c0edcec915d6","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
+      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
+    _references: []
+  - _json: '{"_name":"moveDirection","_id":"664a17f4-5de9-4e17-98d4-b576af14593b","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Vector2,
+      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
+    _references: []
+  - _json: '{"_name":"slidingTarget","_id":"d561b870-fa25-4c03-8c4c-9a3a12ba238a","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Vector2,
+      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
+    _references: []
   - _json: '{"_value":{},"_name":"Adjustable Stats","_id":"63ee3e95-df95-4a76-a73c-121106d10d3a","$type":"NodeCanvas.Framework.Variable`1[[NodeCanvas.Framework.VariableSeperator,
       ParadoxNotion, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
     _references: []
@@ -1170,19 +1190,6 @@ MonoBehaviour:
   - _target: {fileID: 663044082}
     _component: Health
     _name: healthPoint
---- !u!114 &663044083
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 663044071}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9602fab5f37f94d91ac33a6303026398, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  iceSpeed: 4
 --- !u!1 &692810992
 GameObject:
   m_ObjectHideFlags: 0
@@ -1262,7 +1269,6 @@ GameObject:
   m_Component:
   - component: {fileID: 811338679}
   - component: {fileID: 811338678}
-  - component: {fileID: 811338677}
   m_Layer: 0
   m_Name: TerrainManager
   m_TagString: Untagged
@@ -1270,18 +1276,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &811338677
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 811338676}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0edb8582bf3414b629eee59a7b38485a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &811338678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1294,6 +1288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 582533758b4aa4655942f4a2221f68c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  behaviourTreeOwner: {fileID: 663044074}
   currentTerrain: 0
 --- !u!4 &811338679
 Transform:
@@ -1513,7 +1508,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.18210883, y: -0.23842324}
+  m_Offset: {x: -0.13434088, y: -0.23842323}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1524,7 +1519,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.19255432, y: 0.52315354}
+  m_Size: {x: 0.70561767, y: 0.52315354}
   m_EdgeRadius: 0
 --- !u!50 &833880580
 Rigidbody2D:
@@ -1777,7 +1772,7 @@ GameObject:
   - component: {fileID: 1062795548}
   - component: {fileID: 1062795549}
   - component: {fileID: 1062795550}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Melee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2085,7 +2080,7 @@ Transform:
   m_GameObject: {fileID: 1219740716}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.1169996, y: 5.25, z: 0}
+  m_LocalPosition: {x: -4.3669996, y: 5.25, z: 0}
   m_LocalScale: {x: 8.873901, y: 6.9999747, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2123,7 +2118,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.18210883, y: -0.23842324}
+  m_Offset: {x: 0.007193893, y: -0.23842323}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2134,7 +2129,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.19255432, y: 0.52315354}
+  m_Size: {x: 0.5711598, y: 0.52315354}
   m_EdgeRadius: 0
 --- !u!50 &1219740719
 Rigidbody2D:

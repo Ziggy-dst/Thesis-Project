@@ -103,7 +103,7 @@ public class Health : MonoBehaviour
             spriteRenderer.DOColor(Color.red, getHitCD).SetEase(Ease.Flash, 16, 1).RegisterChronosTimeline(timeline);
             getHitCDTimer = getHitCD;
             
-            print(gameObject.name + "health: " + healthPoint);
+            // print(gameObject.name + "health: " + healthPoint);
         }
     }
 }

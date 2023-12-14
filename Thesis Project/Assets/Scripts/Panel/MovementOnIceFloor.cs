@@ -49,7 +49,7 @@ public class MovementOnIceFloor : MonoBehaviour
         }
         else
         {
-            behaviourTreeOwner.enabled = true;
+            // behaviourTreeOwner.enabled = true;
         }
     }
 
@@ -113,7 +113,7 @@ public class MovementOnIceFloor : MonoBehaviour
     private void MoveObject()
     {
         // disable behavior tree
-        behaviourTreeOwner.enabled = false;
+        // behaviourTreeOwner.enabled = false;
 
         Vector2 newPosition = (Vector2)transform.position + (moveDirection.normalized * moveDistance);
         transform.position = Vector2.MoveTowards(transform.position, newPosition, iceSpeed * timeline.deltaTime);
